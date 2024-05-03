@@ -1,0 +1,10 @@
+[*] Success! The xv6 kernel-pmp2 is booting! Yayyy!
+
+Testing PMP Version 2
+1: Testing accessible regions..
+[*] PASS.
+[*] PASS.
+[*] PASS.
+2: Testing inaccessible regions..
+[*] PASS.
+[*] PASS.

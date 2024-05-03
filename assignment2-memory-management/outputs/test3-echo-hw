@@ -1,0 +1,8 @@
+$ echo Hello World
+Ondemand process creation (proc: echo)
+Skipping program section loading (proc: echo, addr: 0, size: 4096)
+Skipping program section loading (proc: echo, addr: 1000, size: 32)
+----------------------------------------
+#PF: Proc (echo), Page (0)
+LOAD: Addr (0), SEG: (1000), SIZE (4096)
+Hello World

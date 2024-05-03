@@ -1,0 +1,25 @@
+#!/bin/bash -e
+
+if [ "$#" != 1 ]; then
+    echo "Usage: ./create-recovery.sh <kernel-version>"
+    echo "      e.g., ./create-recovery.sh kernel1"
+    exit 0
+fi
+
+echo "Making a recovery image with $1"
+
+rm -rf kernel-with-recovery.img
+
+# Get the file size of the bootloader
+if [[ "$(uname)" = "Darwin" ]]; then
+    file_size=$(stat -f %z "bootloader/bootloader")
+else
+    file_size=$(stat -c %s "bootloader/bootloader")
+fi
+
+# Create an empty recovery image
+dd if=/dev/zero of=kernel-with-recovery.img bs=16777216 count=1
+
+# Add the bootloader and recovery kernel to the image
+dd if=$1 of=kernel-with-recovery.img conv=notrunc seek=0
+dd if=recovery-kernel of=kernel-with-recovery.img conv=notrunc bs=1 seek=5242880

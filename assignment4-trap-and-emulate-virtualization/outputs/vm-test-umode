@@ -1,0 +1,24 @@
+Change the line in vm/start.c:
+  x |= MSTATUS_MPP_S;
+to
+  x |= MSTATUS_MPP_U;
+
+You should get the output below:
+"
+Created a VM process and allocated memory region (0x0000000080000000 - 0x0000000080400000).
+(PI at 0x000000000000000a) op = 73, rd = b, funct3 = 2, rs1 = 0, uimm = f14
+(PI at 0x000000000000002c) op = 73, rd = f, funct3 = 2, rs1 = 0, uimm = f14
+(PI at 0x0000000000000034) op = 73, rd = f, funct3 = 2, rs1 = 0, uimm = 300
+(PI at 0x0000000000000040) op = 73, rd = 0, funct3 = 1, rs1 = f, uimm = 300
+(PI at 0x0000000000000046) op = 73, rd = 0, funct3 = 1, rs1 = f, uimm = 180
+(PI at 0x0000000000000052) op = 73, rd = 0, funct3 = 1, rs1 = f, uimm = 341
+(PI at 0x000000000000005a) op = 73, rd = 0, funct3 = 1, rs1 = f, uimm = 302
+(PI at 0x000000000000005e) op = 73, rd = 0, funct3 = 1, rs1 = f, uimm = 303
+(PI at 0x0000000000000062) op = 73, rd = f, funct3 = 2, rs1 = 0, uimm = 104
+(PI at 0x000000000000006a) op = 73, rd = 0, funct3 = 1, rs1 = f, uimm = 104
+(PI at 0x000000000000006e) op = 73, rd = 0, funct3 = 0, rs1 = 0, uimm = 302
+(PI at 0x0000000000000370) op = 73, rd = 0, funct3 = 1, rs1 = d, uimm = 105
+"
+
+Reason: Your system jumps to U-mode directly from M-mode even though it is running
+kernel code; hence, instructions like 'csrr' are not allowed.

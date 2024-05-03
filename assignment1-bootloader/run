@@ -1,0 +1,43 @@
+#!/bin/bash -e
+
+if [ "$#" != 1 ]; then
+    echo "Usage: ./run <kernel-version/gdb>"
+    echo "      e.g., ./run kernel1"
+    exit 0
+fi
+
+kernel=$1
+
+if [ "$1" == "gdb" ]; then
+    kernel=kernel1
+    upper=`echo kernel1 | tr '[:lower:]' '[:upper:]'`
+fi
+
+if [ "$1" == "kernel1tamper" ]; then
+    upper=`echo kernel1 | tr '[:lower:]' '[:upper:]'`
+elif [ "$1" == "kernel2tamper" ]; then
+    upper=`echo kernel2 | tr '[:lower:]' '[:upper:]'`
+elif [ "$1" == "kernel3tamper" ]; then
+    upper=`echo kernel3 | tr '[:lower:]' '[:upper:]'`
+elif [ "$1" == "kernelpmp1tamper" ]; then
+    upper=`echo kernelpmp1 | tr '[:lower:]' '[:upper:]'`
+elif [ "$1" == "kernelpmp2tamper" ]; then
+    upper=`echo kernelpmp2 | tr '[:lower:]' '[:upper:]'`
+else
+    upper=`echo $1 | tr '[:lower:]' '[:upper:]'`
+fi
+
+make clean
+./generate-measurements
+make all KERNELVERSION=$upper
+./create-recovery $kernel
+
+if [ "$1" == "gdb" ]; then
+    echo ""
+    echo "Executing $kernel with GDB.. "
+    make qemu-gdb
+else 
+    echo ""
+    echo "Executing $kernel.. "
+    make qemu
+fi

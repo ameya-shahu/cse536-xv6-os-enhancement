@@ -1,0 +1,29 @@
+$ test4-odheap
+Ondemand process creation (proc: test4-odheap)
+Skipping program section loading (proc: test4-odheap, addr: 0, size: 4096)
+Skipping program section loading (proc: test4-odheap, addr: 1000, size: 32)
+----------------------------------------
+#PF: Proc (test4-odheap), Page (0)
+LOAD: Addr (0), SEG: (1000), SIZE (4096)
+Skipping heap region allocation (proc: test4-odheap, addr: 4000, npages: 10)
+----------------------------------------
+#PF: Proc (test4-odheap), Page (4000)
+----------------------------------------
+#PF: Proc (test4-odheap), Page (5000)
+----------------------------------------
+#PF: Proc (test4-odheap), Page (6000)
+----------------------------------------
+#PF: Proc (test4-odheap), Page (7000)
+----------------------------------------
+#PF: Proc (test4-odheap), Page (8000)
+----------------------------------------
+#PF: Proc (test4-odheap), Page (9000)
+----------------------------------------
+#PF: Proc (test4-odheap), Page (a000)
+----------------------------------------
+#PF: Proc (test4-odheap), Page (b000)
+----------------------------------------
+#PF: Proc (test4-odheap), Page (c000)
+----------------------------------------
+#PF: Proc (test4-odheap), Page (d000)
+[*] Heap test PASSED.

@@ -1,0 +1,5 @@
+[*] ultcreate(tid: 1, ra: 0x0000000000000000, sp: 0x0000000000002020)
+[*] ultschedule (next tid: 1)
+[.] started the thread function (tid = 1)
+[*] ultdestroy(tid: 1)
+[*] User-Level Threading Test #1 Complete.

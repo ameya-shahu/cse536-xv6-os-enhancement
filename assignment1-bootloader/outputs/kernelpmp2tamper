@@ -1,0 +1,6 @@
+[X] ERROR: Kernel hash DOES NOT MATCH trusted value --> KERNEL IS COMPROMISED!
+---------------------------------------------------------------------------------
+Expected: e950a9d9cc12fa9d4ef2233ca4494a5ede8b7822e5b1de176aebe554ac79fb0b
+Observed: c81269e5a6e1c6abdc3a97da6f08937bd98e489b83c18a9034ce6882ec24f838
+---------------------------------------------------------------------------------
+Goodbye!

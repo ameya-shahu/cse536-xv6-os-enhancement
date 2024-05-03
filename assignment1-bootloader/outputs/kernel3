@@ -1,0 +1,12 @@
+[*] Success! The xv6 kernel-3 is booting! Yayyy!
+
+System Information Table
+-------------------------------------
+Bootloader Start:   0x0000000080000000
+Bootloader End:     0x0000000080080000
+DRAM Start:         0x0000000080000000
+DRAM End:           0x0000000088000000
+-------------------------------------
+Kernel Measurement: f51839c07b91129700ebda73c39ec784fb5e1bcbea1eb65e37853b2abffc7c0e
+-------------------------------------
+-------------------------------------

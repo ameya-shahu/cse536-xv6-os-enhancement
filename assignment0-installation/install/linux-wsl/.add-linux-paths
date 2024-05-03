@@ -1,0 +1,23 @@
+#!/bin/bash -e
+
+# Add RISC-V QEMU and toolchain to path
+pushd ../
+	QEMU_PATH=`pwd`/riscv-qemu/build
+	TOOLCHAIN_PATH=`pwd`/riscv-gnu-toolchain/build/bin
+
+	# Make sure the folders exist
+	if [ ! -d $QEMU_PATH ];
+	then 
+		echo "Please install QEMU by running ./linux-qemu.sh"
+		popd
+		return 0
+	elif [ ! -d $TOOLCHAIN_PATH ];
+	then
+		echo "Please install toolchain by running ./linux-toolchain.sh"
+		popd
+		return 0
+	fi
+
+	# Export folders to the correct path
+	export PATH=$PATH:$QEMU_PATH:$TOOLCHAIN_PATH
+popd

@@ -1,0 +1,9 @@
+Running Test10-CoW
+----------------------------------------
+#PF: Proc (test9-cow)[4], Page (3000)
+COW: Proc (test9-cow) PID (4) Addr (3000)
+PID (4) Exiting
+----------------------------------------
+#PF: Proc (test9-cow)[3], Page (3000)
+COW: Proc (test9-cow) PID (3) Addr (3000)
+PID (3) Exiting

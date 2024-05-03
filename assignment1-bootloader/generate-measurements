@@ -1,0 +1,58 @@
+hash_kernel1=`sha256sum kernel1 | cut -d " " -f 1`
+hash_kernel2=`sha256sum kernel2 | cut -d " " -f 1`
+hash_kernel3=`sha256sum kernel3 | cut -d " " -f 1`
+hash_kernelpmp1=`sha256sum kernelpmp1 | cut -d " " -f 1`
+hash_kernelpmp2=`sha256sum kernelpmp2 | cut -d " " -f 1`
+
+# Copy the basic stuff
+printf "#ifndef MEASUREMENTS_H
+#define MEASUREMENTS_H
+
+#if   defined(KERNEL1)
+  BYTE trusted_kernel_hash[32] = {" > measurements.h
+
+byte_array=""
+for ((i = 0; i < ${#hash_kernel1}; i += 2)); do
+    byte_array+='0x'${hash_kernel1:$i:2}','
+done
+echo "$byte_array};" >> measurements.h
+printf "#elif defined(KERNEL2)
+  BYTE trusted_kernel_hash[32] = {" >> measurements.h
+
+byte_array=""
+for ((i = 0; i < ${#hash_kernel2}; i += 2)); do
+    byte_array+='0x'${hash_kernel2:$i:2}','
+done
+echo "$byte_array};" >> measurements.h
+printf "#elif defined(KERNEL3)
+  BYTE trusted_kernel_hash[32] = {" >> measurements.h
+
+byte_array=""
+for ((i = 0; i < ${#hash_kernel3}; i += 2)); do
+    byte_array+='0x'${hash_kernel3:$i:2}','
+done
+echo "$byte_array};" >> measurements.h
+printf "#elif defined(KERNELPMP1)
+  BYTE trusted_kernel_hash[32] = {" >> measurements.h
+
+byte_array=""
+for ((i = 0; i < ${#hash_kernelpmp1}; i += 2)); do
+    byte_array+='0x'${hash_kernelpmp1:$i:2}','
+done
+echo "$byte_array};" >> measurements.h
+printf "#elif defined(KERNELPMP2)
+  BYTE trusted_kernel_hash[32] = {" >> measurements.h
+
+byte_array=""
+for ((i = 0; i < ${#hash_kernelpmp2}; i += 2)); do
+    byte_array+='0x'${hash_kernelpmp2:$i:2}','
+done
+echo "$byte_array};" >> measurements.h
+echo "#endif
+" >> measurements.h
+
+echo "#endif" >> measurements.h
+
+cat measurements.h
+
+cp measurements.h bootloader/

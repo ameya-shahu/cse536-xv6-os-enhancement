@@ -1,0 +1,92 @@
+Running Test8-CoW
+----------------------------------------
+#PF: Proc (test8-cow), Page (3000)
+COW: Proc (test8-cow) PID (4) Addr (3000)
+
+Testing [PID = 4]
+----------------------------------------
+#PF: Proc (test8-cow), Page (4000)
+COW: Proc (test8-cow) PID (4) Addr (4000)
+----------------------------------------
+#PF: Proc (test8-cow), Page (5000)
+COW: Proc (test8-cow) PID (4) Addr (5000)
+----------------------------------------
+#PF: Proc (test8-cow), Page (6000)
+COW: Proc (test8-cow) PID (4) Addr (6000)
+----------------------------------------
+#PF: Proc (test8-cow), Page (7000)
+COW: Proc (test8-cow) PID (4) Addr (7000)
+----------------------------------------
+#PF: Proc (test8-cow), Page (8000)
+COW: Proc (test8-cow) PID (4) Addr (8000)
+----------------------------------------
+#PF: Proc (test8-cow), Page (3000)
+COW: Proc (test8-cow) PID (6) Addr (3000)
+
+Testing [PID = 6]
+----------------------------------------
+#PF: Proc (test8-cow), Page (4000)
+COW: Proc (test8-cow) PID (6) Addr (4000)
+----------------------------------------
+#PF: Proc (test8-cow), Page (5000)
+COW: Proc (test8-cow) PID (6) Addr (5000)
+----------------------------------------
+#PF: Proc (test8-cow), Page (6000)
+COW: Proc (test8-cow) PID (6) Addr (6000)
+----------------------------------------
+#PF: Proc (test8-cow), Page (7000)
+COW: Proc (test8-cow) PID (6) Addr (7000)
+----------------------------------------
+#PF: Proc (test8-cow), Page (8000)
+COW: Proc (test8-cow) PID (6) Addr (8000)
+
+CoW Test Passed [PID = 6]
+
+----------------------------------------
+#PF: Proc (test8-cow), Page (3000)
+COW: Proc (test8-cow) PID (5) Addr (3000)
+
+Testing [PID = 5]
+----------------------------------------
+#PF: Proc (test8-cow), Page (4000)
+COW: Proc (test8-cow) PID (5) Addr (4000)
+----------------------------------------
+#PF: Proc (test8-cow), Page (5000)
+COW: Proc (test8-cow) PID (5) Addr (5000)
+----------------------------------------
+#PF: Proc (test8-cow), Page (6000)
+COW: Proc (test8-cow) PID (5) Addr (6000)
+----------------------------------------
+#PF: Proc (test8-cow), Page (7000)
+COW: Proc (test8-cow) PID (5) Addr (7000)
+----------------------------------------
+#PF: Proc (test8-cow), Page (8000)
+COW: Proc (test8-cow) PID (5) Addr (8000)
+
+CoW Test Passed [PID = 5]
+
+
+CoW Test Passed [PID = 4]
+
+----------------------------------------
+#PF: Proc (test8-cow), Page (3000)
+COW: Proc (test8-cow) PID (3) Addr (3000)
+
+Testing [PID = 3]
+----------------------------------------
+#PF: Proc (test8-cow), Page (4000)
+COW: Proc (test8-cow) PID (3) Addr (4000)
+----------------------------------------
+#PF: Proc (test8-cow), Page (5000)
+COW: Proc (test8-cow) PID (3) Addr (5000)
+----------------------------------------
+#PF: Proc (test8-cow), Page (6000)
+COW: Proc (test8-cow) PID (3) Addr (6000)
+----------------------------------------
+#PF: Proc (test8-cow), Page (7000)
+COW: Proc (test8-cow) PID (3) Addr (7000)
+----------------------------------------
+#PF: Proc (test8-cow), Page (8000)
+COW: Proc (test8-cow) PID (3) Addr (8000)
+
+CoW Test Passed [PID = 3]
